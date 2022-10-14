@@ -4,6 +4,7 @@ m = 3, n = 4.
 1 -3 8 -9
 8 7 -7 9 */
 
+/* 
 Console.WriteLine("Количество строк ");
 int rows = int.Parse(Console.ReadLine());
 Console.WriteLine("Количество столбцов ");
@@ -11,14 +12,51 @@ int colums = int.Parse(Console.ReadLine());
 
 int[,] array = Getarray(rows, colums, -10, 10);
 Printarray(array);
+ */
+
+/* 
+Задача 50.Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и 
+возвращает значение этого элемента или же указание, что такого элемента нет.
+
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+i = 4, j = 2->такого числа в массиве нет
+i = 1, j = 2-> 2 */
 
 
+Console.WriteLine("Количество строк ");
+int rows = int.Parse(Console.ReadLine());
+Console.WriteLine("Количество столбцов ");
+int colums = int.Parse(Console.ReadLine());
 
+int[,] array = Getarray(rows, colums, -10, 10);
+Printarray(array);
+PositionElement(array);
 
-
-
-
-
+void PositionElement(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.WriteLine("Введи позиции элемента по строке и по столбцу ");
+            int rows = int.Parse(Console.ReadLine());
+            int colums = int.Parse(Console.ReadLine());
+            if (rows == i && colums == j)
+            {
+                Console.WriteLine($"элемент позиции {rows}{colums} = {array[i, j]} ");
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Такого элемента нет");
+            }
+        }
+    }
+    Console.WriteLine();
+}
 
 
 
