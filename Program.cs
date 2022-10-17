@@ -45,18 +45,19 @@ void PositionElement(int[,] array)
             Console.WriteLine("Введи позиции элемента по строке и по столбцу ");
             int rows = int.Parse(Console.ReadLine());
             int colums = int.Parse(Console.ReadLine());
-            if (rows == i && colums == j)
+            if (rows >= array.GetLength(0) || colums >= array.GetLength(1))
+            {
+                Console.WriteLine("Такого элемента нет");                
+            }
+            else
             {
                 Console.WriteLine($"элемент позиции {rows}{colums} = {array[i, j]} ");
                 
             }
-            else
-            {
-                Console.WriteLine("Такого элемента нет");
-            }
         }
+        Console.WriteLine();
     }
-    Console.WriteLine();
+    
 }
 
 
@@ -70,7 +71,7 @@ void PositionElement(int[,] array)
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3. */
 
-
+/* 
 Console.WriteLine("Количество строк ");
 int rows = int.Parse(Console.ReadLine());
 Console.WriteLine("Количество столбцов ");
@@ -95,7 +96,7 @@ double averagecolums(int[,] array)
 }
 
 
-
+ */
 
 
 int[,] Getarray(int m, int n, int minvalue, int maxvalue)
