@@ -48,7 +48,7 @@ void PositionElement(int[,] array)
             if (rows == i && colums == j)
             {
                 Console.WriteLine($"элемент позиции {rows}{colums} = {array[i, j]} ");
-                break;
+                
             }
             else
             {
@@ -87,8 +87,9 @@ double averagecolums(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            aver = (aver + array[i, j]) / array.GetLength(0);
+            aver = (aver + array[i, j]);
         }
+        aver = aver / array.GetLength(0);
     }
     return aver;
 }
@@ -121,4 +122,3 @@ void Printarray(int[,] array)
         Console.WriteLine();
     }
 }
-
