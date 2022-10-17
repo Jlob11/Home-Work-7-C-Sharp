@@ -26,7 +26,7 @@ i = 4, j = 2->такого числа в массиве нет
 i = 1, j = 2-> 2 */
 
 
-/* 
+
 Console.WriteLine("Количество строк ");
 int rows = int.Parse(Console.ReadLine());
 Console.WriteLine("Количество столбцов ");
@@ -59,7 +59,7 @@ void PositionElement(int[,] array)
     Console.WriteLine();
 }
 
- */
+
 
 
 /* Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
@@ -97,28 +97,28 @@ double averagecolums(int[,] array)
 
 
 
-    int[,] Getarray(int m, int n, int minvalue, int maxvalue)
+int[,] Getarray(int m, int n, int minvalue, int maxvalue)
+{
+    int[,] result = new int[m, n];
+    for (int i = 0; i < m; i++)
     {
-        int[,] result = new int[m, n];
-        for (int i = 0; i < m; i++)
+        for (int j = 0; j < n; j++)
         {
-            for (int j = 0; j < n; j++)
-            {
-                result[i, j] = new Random().Next(minvalue, maxvalue + 1);
-            }
+            result[i, j] = new Random().Next(minvalue, maxvalue + 1);
         }
-        return result;
     }
+    return result;
+}
 
-    void Printarray(int[,] array)
+void Printarray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int i = 0; i < array.GetLength(0); i++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            for (int j = 0; j < array.GetLength(1); j++)
-            {
-                Console.Write($"{array[i, j]} ");
-            }
-            Console.WriteLine();
+            Console.Write($"{array[i, j]} ");
         }
+        Console.WriteLine();
     }
+}
 
